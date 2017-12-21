@@ -425,32 +425,15 @@
 
       
         
-          
-            <p>heroku是一个较好的免费空间，在这个平台上能够搭建很多应用。wordpress是应用广泛的、开源的博客空间。利用heroku+wordpress就能搭建属于自己的博客。</p>
-<p><strong>注册heroku账号</strong><br>打开浏览器，输入www.heroku.com，然后点击右上角“Signup”按钮进行注册（这个注册可能需要爬个梯子）。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737481/heroku-wordpress/B99ES7VE_T_WB465KD_XIQ.png" alt="" width="850" height="500"></p>
-<p>在注册页面填入自己的相关信息。其中最主要的就是填好自己邮箱，这个要用于验证，其余的信息随便填写就好。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737484/heroku-wordpress/FEDZ4_K_LJLD_7JA1S_U.png" alt="" width="850" height="500"></p>
-<p>填写好信息，heroku会发送一个确认的邮件到刚刚注册的邮箱。登录邮箱，点击里面的确认邮件。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737493/heroku-wordpress/NLH_3H8X_N0JX_VT_H7Z4ER.png" alt="" width="1008" height="630"></p>
-<p>此时，链接会自动跳转到设置登录密码的界面。在这里设置好登陆heroku的密码，记号账号和密码，一会儿需要用到。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737548/heroku-wordpress/8_P_6_UM_HG__8JR_VCQG.png" alt="" width="850" height="500"></p>
-<p>设置好密码以后，点击“SET PASSWORD AND LOGIN”这个按钮，页面将直接跳转到已经用注册邮箱登陆的仪表盘界面。到此，创建heroku的账户操作已经完成，接下来就是在heroku上进行部署操作。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737567/heroku-wordpress/A3NO_1YMTN9_VHF8EIR0PB.png" alt="" width="850" height="500"></p>
-<p><strong>安装必要软件<br></strong>    本地部署wordpress的使用需要用到heroku提供的软件，我们可以通过“仪表盘”页面下方的“Support”按钮获得帮助。然后选择“Getting started”（这边随便选一个，目的是下载那个软件）。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737580/heroku-wordpress/0CXOU_SV_Y70_48GBPKU_ZI.png" alt="" width="850" height="500"></p>
-<p>我选择的是“Getting Started on Heroku with Python”。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737587/heroku-wordpress/M_XV_KMGLU75QXSM3H5G.png" alt="" width="850" height="500"></p>
-<p>点击“I’m ready to start”，进入到“Set up”的界面，然后选择与操作系统相对应的那个版本进行下载。（稍后提供下载链接，这样就没必要这么麻烦了）。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737600/heroku-wordpress/NIIYHFWPFH1FPJTSQW_QONI.png" alt="" width="850" height="500"></p>
-<p>接下来就是安装下载好的软件到本机。我用的windows操作系统，所以直接双击开始安装。跟其余的软件一样，首先是选择安装的目录。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737599/heroku-wordpress/4_09_RN9_8AQBOU1PTOA1I.png" alt="" width="503" height="390"></p>
-<p>接着是安装的选项，默认是全部选上。如果自己之前安装过git，这边可以不用安装了，不过为了避免其余的问题，还是默认安装吧。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737595/heroku-wordpress/C_C_BVU_S_MMYFF_KC6.png" alt="" width="503" height="390"></p>
-<p><strong>部署wordpress<br></strong>    安装结束后就可以通过命令行的方式进行wordpress的部署了。打开命令行，windows下同时按下“windows”+“R”键，在里面输入“cmd”，然后回车。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737602/heroku-wordpress/6_Z_T_5KUB01__ZLJ61KW.png" alt="" width="413" height="237"></p>
-<p>默认进入的是当前用户的目录（这个无关大雅）。通过指令登陆到heroku上，在命令行界面输入“heroku login”，然后会回车。此时需要输入刚刚注册时的邮箱账号，再回车，需要输入登录密码，再回车。如果出现“Logged in as 邮箱账号”，则表明成功的从终端登录到heroku。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737605/heroku-wordpress/DI_DX9EUX_B_C_9TS1H_NSU.png" alt="" width="363" height="192"></p>
-<p>接下来从github上克隆wordpress。我是在d盘创建了一个文件夹，然后在文件夹中克隆的这个仓库，其实完全可以在当前位置进行克隆，这些都是随意的。克隆的地址<a href="https://github.com/mhoofman/wordpress-heroku.git。当然也可以尝试github上其余的类似的仓库。注：如果是第一次使用git，那么可能需要先配置一下邮箱和用户名，会有提示。克隆结束以后，进入克隆的仓库“cd" target="_blank" rel="noopener">https://github.com/mhoofman/wordpress-heroku.git。当然也可以尝试github上其余的类似的仓库。注：如果是第一次使用git，那么可能需要先配置一下邮箱和用户名，会有提示。克隆结束以后，进入克隆的仓库“cd</a> wordpress-heroku”。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737608/heroku-wordpress/35J_IR8A2AMP8_DLN4V3LCJ.png" alt="" width="641" height="323"></p>
-<p>接着，通过heroku创建程序。使用“heroku create appName”的方式创建。如果用户名存在，则会提示“Name is already taken”，否则就是创建成功，并提供两个链接，一个是网址链接，一个是git仓库链接。当然也可以直接用“heroku create”进行创建，只不过，这个方式就会自己生成一个很长的名字，这个名字可以登录到heroku的仪表盘进行修改。</p>
-<p>接着要创建数据库，heroku免费的数据库是heroku-postgresql，如果想用mysql或其余数据库，需要在heroku上进行信用卡认证，说是完全免费，没有试过。创建自带免费数据库“heroku addons:create heroku-postgersql”,如果没有意外，数据库就创建结束了。以前创建后需要跟app进行链接，现在这个操作也省掉了。然后将目前这个仓库的所有东西都添加一些，使用“git add .”进行添加。add后面的“.”代表当前目录的意思。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737612/heroku-wordpress/GYC2ZZH_EISI55UXIZIBGS.png" alt="" width="664" height="365"></p>
-<p>最后将这个文件上传，使用“git push heroku master”。在这个过程中，如果出现错误，可能是因为上传的buffer太小，根据提示设置一下就好。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737614/heroku-wordpress/A_7_APY8FTG_WODTI0J7P_R.png" alt="" width="659" height="793"></p>
-<p>上传结束以后，可以看到有一句“<a href="https://appName.herokuapp.com" target="_blank" rel="noopener">https://appName.herokuapp.com</a> deployed to Heroku”，前面的那个链接就是blog的地址。复制这个链接，在浏览器中打开，选择安装的语言。我选择的是“简体中文”，然后选择“Continue”。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737623/heroku-wordpress/WT0ONUO_2IQ_TWVN_8041G.png" alt="" width="850" height="500"></p>
-<p>接着设置一些网站的基础信息。这边设置的用户名和密码是登陆wordpress后台用的，最后点击“安装WordPress”。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737628/heroku-wordpress/98J_N_5_3K0E0P_U0MKC2.png" alt="" width="850" height="500"></p>
-<p>安装好以后，就可以通过刚刚创建的用户名和密码进行登陆了。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737634/heroku-wordpress/D10J_M1D_DW_X_XGO_7YY.png" alt="" width="850" height="500"></p>
-<p>登录到后台以后就能安装插件，主题等操作了（最好不要更新，好像一更新就出问题，没法恢复，这确实是个缺点）。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737649/heroku-wordpress/SW5_6OE315NPS_C_NIN0.png" alt="" width="850" height="500"></p>
-<p>其实，这个是已经可以查看部署好的站点了。通过链接直接查看。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737649/heroku-wordpress/J_KWWUAE9X_Z_DNFJ_BL.png" alt="" width="850" height="500"></p>
-<p><strong>愉快的享用吧。</strong></p>
-
-          
+          <p>heroku是一个较好的免费空间，在这个平台上能够搭建很多应用。wordpress是应用广泛的、开源的博客空间。利用heroku+wordpress就能搭建属于自己的博客。</p>
+<p><strong>注册heroku账号</strong><br>打开浏览器，输入www.heroku.com，然后点击右上角“Signup”按钮进行注册（这个注册可能需要爬个梯子）。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/21/Heroku-WordPress/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -691,18 +674,17 @@
 
       
         
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/21/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
