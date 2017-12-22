@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>hexo创建新博客后自动打开 | SWorker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Hexo+Github已经成为一种非常流行的搭建博客的方式。 搭建完成后，撰写博客时还是有不少麻烦的。本文主要讲述如何在创建新博客后自动打开编辑。我是采用Visual Stdio Code + markdownlint的方式进行编辑的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo创建新博客后自动打开">
+<meta property="og:url" content="http://shadow-worker.herokuapp.com/2017/12/22/monitor-new-blog/index.html">
+<meta property="og:site_name" content="SWorker">
+<meta property="og:description" content="Hexo+Github已经成为一种非常流行的搭建博客的方式。 搭建完成后，撰写博客时还是有不少麻烦的。本文主要讲述如何在创建新博客后自动打开编辑。我是采用Visual Stdio Code + markdownlint的方式进行编辑的。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/902f6897ly1fmpdxd3ldvj20rk0ak0tl.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/902f6897gy1fmpe9n2gqzj20gj0ah0su.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/902f6897gy1fmpee9qfyhj20df07bmxj.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/902f6897gy1fmpemxvmfzj206k06cmxn.jpg">
+<meta property="og:updated_time" content="2017-12-22T04:11:58.441Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo创建新博客后自动打开">
+<meta name="twitter:description" content="Hexo+Github已经成为一种非常流行的搭建博客的方式。 搭建完成后，撰写博客时还是有不少麻烦的。本文主要讲述如何在创建新博客后自动打开编辑。我是采用Visual Stdio Code + markdownlint的方式进行编辑的。">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/902f6897ly1fmpdxd3ldvj20rk0ak0tl.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="SWorker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">SWorker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Welcome to my blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://shadow-worker.herokuapp.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-monitor-new-blog" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/22/monitor-new-blog/" class="article-date">
+  <time datetime="2017-12-22T02:29:37.000Z" itemprop="datePublished">2017-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo创建新博客后自动打开
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Hexo+Github已经成为一种非常流行的搭建博客的方式。</p>
+<p>搭建完成后，撰写博客时还是有不少麻烦的。本文主要讲述如何在创建新博客后自动打开编辑。我是采用Visual Stdio Code + markdownlint的方式进行编辑的。</p>
+<p><img align="middle" src="http://ww1.sinaimg.cn/large/902f6897ly1fmpdxd3ldvj20rk0ak0tl.jpg" width="992" height="380"></p>
+<a id="more"></a>
+<p>如何实现创建新文章后就能通过code编辑器自动打开呢，这个得用到nodejs。首先进入Hexo的目录，就是有站点信息文件（_config.yml）的 那个目录。查看一下里面是否有一个名叫“scripts”的文件夹，如果没有，先创建一个（命令行创建：mkdir scripts）。</p>
+<p><img align="middle" src="http://ww1.sinaimg.cn/large/902f6897gy1fmpe9n2gqzj20gj0ah0su.jpg" width="595" height="377"></p>
+<p>进入到刚刚创建的“scripts”文件夹中，在里面新建一个js文件，然后添加以下内容（我起名为monitor.js）。注：以下是Hexo 3版本的，如果是Hexo 2.x版本的，只要将“data”换成“path”，同时将“[data.path]”换成“path”即可。由于我用的是code编辑器，所以第4行中我是用的code，如果想换成别的编辑器，在这里更换就好，注意code后面要留一个空格！！！</p>
+<p><img align="middle" src="http://ww1.sinaimg.cn/large/902f6897gy1fmpee9qfyhj20df07bmxj.jpg" alt="var exec = require('child_process').exec; hexo.on('new', function(data){ exec('code ' + [data.path]); });" width="483" height="263"></p>
+<p>将文件保存，然后再次用hexo new blogName的时候，新创建的文件就能自动打开了。欢快的进行blog撰写吧。</p>
+<p>有没有人想过开发一个按钮点点就能完成hexo new， d，s，g等等操作的呢，如果还没有，稍等我来试试。</p>
+<p>如果觉得不错，就打赏一下吧</p>
+<p><img align="middle" src="http://ww1.sinaimg.cn/large/902f6897gy1fmpemxvmfzj206k06cmxn.jpg" width="236" height="228"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://shadow-worker.herokuapp.com/2017/12/22/monitor-new-blog/" data-id="cjbhn728z00045wvel6bjkty9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/21/C-文件读写-fstream/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">C++文件读写(fstream)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/12/22/monitor-new-blog/">hexo创建新博客后自动打开</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/C-文件读写-fstream/">C++文件读写(fstream)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/Ubuntu-VPS-ShadowSocks/">Ubuntu+VPS+ShadowSocks</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/Heroku-WordPress/">Heroku+WordPress</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/测试文章/">no-ip的使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Terry Chow<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

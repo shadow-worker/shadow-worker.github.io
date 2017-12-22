@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Heroku+WordPress | SWorker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="heroku是一个较好的免费空间，在这个平台上能够搭建很多应用。wordpress是应用广泛的、开源的博客空间。利用heroku+wordpress就能搭建属于自己的博客。 注册heroku账号打开浏览器，输入www.heroku.com，然后点击右上角“Signup”按钮进行注册（这个注册可能需要爬个梯子）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Heroku+WordPress">
+<meta property="og:url" content="http://shadow-worker.herokuapp.com/2017/12/21/Heroku-WordPress/index.html">
+<meta property="og:site_name" content="SWorker">
+<meta property="og:description" content="heroku是一个较好的免费空间，在这个平台上能够搭建很多应用。wordpress是应用广泛的、开源的博客空间。利用heroku+wordpress就能搭建属于自己的博客。 注册heroku账号打开浏览器，输入www.heroku.com，然后点击右上角“Signup”按钮进行注册（这个注册可能需要爬个梯子）。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737481/heroku-wordpress/B99ES7VE_T_WB465KD_XIQ.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737484/heroku-wordpress/FEDZ4_K_LJLD_7JA1S_U.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737493/heroku-wordpress/NLH_3H8X_N0JX_VT_H7Z4ER.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737548/heroku-wordpress/8_P_6_UM_HG__8JR_VCQG.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737567/heroku-wordpress/A3NO_1YMTN9_VHF8EIR0PB.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737580/heroku-wordpress/0CXOU_SV_Y70_48GBPKU_ZI.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737587/heroku-wordpress/M_XV_KMGLU75QXSM3H5G.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737600/heroku-wordpress/NIIYHFWPFH1FPJTSQW_QONI.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737599/heroku-wordpress/4_09_RN9_8AQBOU1PTOA1I.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737595/heroku-wordpress/C_C_BVU_S_MMYFF_KC6.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737602/heroku-wordpress/6_Z_T_5KUB01__ZLJ61KW.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737605/heroku-wordpress/DI_DX9EUX_B_C_9TS1H_NSU.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737608/heroku-wordpress/35J_IR8A2AMP8_DLN4V3LCJ.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737612/heroku-wordpress/GYC2ZZH_EISI55UXIZIBGS.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737614/heroku-wordpress/A_7_APY8FTG_WODTI0J7P_R.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737623/heroku-wordpress/WT0ONUO_2IQ_TWVN_8041G.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737628/heroku-wordpress/98J_N_5_3K0E0P_U0MKC2.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737634/heroku-wordpress/D10J_M1D_DW_X_XGO_7YY.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737649/heroku-wordpress/SW5_6OE315NPS_C_NIN0.png">
+<meta property="og:image" content="http://res.cloudinary.com/terry/image/upload/v1513737649/heroku-wordpress/J_KWWUAE9X_Z_DNFJ_BL.png">
+<meta property="og:updated_time" content="2017-12-21T08:22:07.322Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Heroku+WordPress">
+<meta name="twitter:description" content="heroku是一个较好的免费空间，在这个平台上能够搭建很多应用。wordpress是应用广泛的、开源的博客空间。利用heroku+wordpress就能搭建属于自己的博客。 注册heroku账号打开浏览器，输入www.heroku.com，然后点击右上角“Signup”按钮进行注册（这个注册可能需要爬个梯子）。">
+<meta name="twitter:image" content="http://res.cloudinary.com/terry/image/upload/v1513737481/heroku-wordpress/B99ES7VE_T_WB465KD_XIQ.png">
+  
+    <link rel="alternate" href="/atom.xml" title="SWorker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">SWorker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Welcome to my blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://shadow-worker.herokuapp.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Heroku-WordPress" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/21/Heroku-WordPress/" class="article-date">
+  <time datetime="2017-12-21T08:13:11.000Z" itemprop="datePublished">2017-12-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Heroku+WordPress
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>heroku是一个较好的免费空间，在这个平台上能够搭建很多应用。wordpress是应用广泛的、开源的博客空间。利用heroku+wordpress就能搭建属于自己的博客。</p>
+<p><strong>注册heroku账号</strong><br>打开浏览器，输入www.heroku.com，然后点击右上角“Signup”按钮进行注册（这个注册可能需要爬个梯子）。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737481/heroku-wordpress/B99ES7VE_T_WB465KD_XIQ.png" alt="" width="850" height="500"></p>
+<a id="more"></a>
+<p>在注册页面填入自己的相关信息。其中最主要的就是填好自己邮箱，这个要用于验证，其余的信息随便填写就好。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737484/heroku-wordpress/FEDZ4_K_LJLD_7JA1S_U.png" alt="" width="850" height="500"></p>
+<p>填写好信息，heroku会发送一个确认的邮件到刚刚注册的邮箱。登录邮箱，点击里面的确认邮件。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737493/heroku-wordpress/NLH_3H8X_N0JX_VT_H7Z4ER.png" alt="" width="1008" height="630"></p>
+<p>此时，链接会自动跳转到设置登录密码的界面。在这里设置好登陆heroku的密码，记号账号和密码，一会儿需要用到。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737548/heroku-wordpress/8_P_6_UM_HG__8JR_VCQG.png" alt="" width="850" height="500"></p>
+<p>设置好密码以后，点击“SET PASSWORD AND LOGIN”这个按钮，页面将直接跳转到已经用注册邮箱登陆的仪表盘界面。到此，创建heroku的账户操作已经完成，接下来就是在heroku上进行部署操作。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737567/heroku-wordpress/A3NO_1YMTN9_VHF8EIR0PB.png" alt="" width="850" height="500"></p>
+<p><strong>安装必要软件<br></strong>    本地部署wordpress的使用需要用到heroku提供的软件，我们可以通过“仪表盘”页面下方的“Support”按钮获得帮助。然后选择“Getting started”（这边随便选一个，目的是下载那个软件）。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737580/heroku-wordpress/0CXOU_SV_Y70_48GBPKU_ZI.png" alt="" width="850" height="500"></p>
+<p>我选择的是“Getting Started on Heroku with Python”。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737587/heroku-wordpress/M_XV_KMGLU75QXSM3H5G.png" alt="" width="850" height="500"></p>
+<p>点击“I’m ready to start”，进入到“Set up”的界面，然后选择与操作系统相对应的那个版本进行下载。（稍后提供下载链接，这样就没必要这么麻烦了）。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737600/heroku-wordpress/NIIYHFWPFH1FPJTSQW_QONI.png" alt="" width="850" height="500"></p>
+<p>接下来就是安装下载好的软件到本机。我用的windows操作系统，所以直接双击开始安装。跟其余的软件一样，首先是选择安装的目录。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737599/heroku-wordpress/4_09_RN9_8AQBOU1PTOA1I.png" alt="" width="503" height="390"></p>
+<p>接着是安装的选项，默认是全部选上。如果自己之前安装过git，这边可以不用安装了，不过为了避免其余的问题，还是默认安装吧。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737595/heroku-wordpress/C_C_BVU_S_MMYFF_KC6.png" alt="" width="503" height="390"></p>
+<p><strong>部署wordpress<br></strong>    安装结束后就可以通过命令行的方式进行wordpress的部署了。打开命令行，windows下同时按下“windows”+“R”键，在里面输入“cmd”，然后回车。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737602/heroku-wordpress/6_Z_T_5KUB01__ZLJ61KW.png" alt="" width="413" height="237"></p>
+<p>默认进入的是当前用户的目录（这个无关大雅）。通过指令登陆到heroku上，在命令行界面输入“heroku login”，然后会回车。此时需要输入刚刚注册时的邮箱账号，再回车，需要输入登录密码，再回车。如果出现“Logged in as 邮箱账号”，则表明成功的从终端登录到heroku。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737605/heroku-wordpress/DI_DX9EUX_B_C_9TS1H_NSU.png" alt="" width="363" height="192"></p>
+<p>接下来从github上克隆wordpress。我是在d盘创建了一个文件夹，然后在文件夹中克隆的这个仓库，其实完全可以在当前位置进行克隆，这些都是随意的。克隆的地址<a href="https://github.com/mhoofman/wordpress-heroku.git。当然也可以尝试github上其余的类似的仓库。注：如果是第一次使用git，那么可能需要先配置一下邮箱和用户名，会有提示。克隆结束以后，进入克隆的仓库“cd" target="_blank" rel="noopener">https://github.com/mhoofman/wordpress-heroku.git。当然也可以尝试github上其余的类似的仓库。注：如果是第一次使用git，那么可能需要先配置一下邮箱和用户名，会有提示。克隆结束以后，进入克隆的仓库“cd</a> wordpress-heroku”。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737608/heroku-wordpress/35J_IR8A2AMP8_DLN4V3LCJ.png" alt="" width="641" height="323"></p>
+<p>接着，通过heroku创建程序。使用“heroku create appName”的方式创建。如果用户名存在，则会提示“Name is already taken”，否则就是创建成功，并提供两个链接，一个是网址链接，一个是git仓库链接。当然也可以直接用“heroku create”进行创建，只不过，这个方式就会自己生成一个很长的名字，这个名字可以登录到heroku的仪表盘进行修改。</p>
+<p>接着要创建数据库，heroku免费的数据库是heroku-postgresql，如果想用mysql或其余数据库，需要在heroku上进行信用卡认证，说是完全免费，没有试过。创建自带免费数据库“heroku addons:create heroku-postgersql”,如果没有意外，数据库就创建结束了。以前创建后需要跟app进行链接，现在这个操作也省掉了。然后将目前这个仓库的所有东西都添加一些，使用“git add .”进行添加。add后面的“.”代表当前目录的意思。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737612/heroku-wordpress/GYC2ZZH_EISI55UXIZIBGS.png" alt="" width="664" height="365"></p>
+<p>最后将这个文件上传，使用“git push heroku master”。在这个过程中，如果出现错误，可能是因为上传的buffer太小，根据提示设置一下就好。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737614/heroku-wordpress/A_7_APY8FTG_WODTI0J7P_R.png" alt="" width="659" height="793"></p>
+<p>上传结束以后，可以看到有一句“<a href="https://appName.herokuapp.com" target="_blank" rel="noopener">https://appName.herokuapp.com</a> deployed to Heroku”，前面的那个链接就是blog的地址。复制这个链接，在浏览器中打开，选择安装的语言。我选择的是“简体中文”，然后选择“Continue”。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737623/heroku-wordpress/WT0ONUO_2IQ_TWVN_8041G.png" alt="" width="850" height="500"></p>
+<p>接着设置一些网站的基础信息。这边设置的用户名和密码是登陆wordpress后台用的，最后点击“安装WordPress”。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737628/heroku-wordpress/98J_N_5_3K0E0P_U0MKC2.png" alt="" width="850" height="500"></p>
+<p>安装好以后，就可以通过刚刚创建的用户名和密码进行登陆了。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737634/heroku-wordpress/D10J_M1D_DW_X_XGO_7YY.png" alt="" width="850" height="500"></p>
+<p>登录到后台以后就能安装插件，主题等操作了（最好不要更新，好像一更新就出问题，没法恢复，这确实是个缺点）。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737649/heroku-wordpress/SW5_6OE315NPS_C_NIN0.png" alt="" width="850" height="500"></p>
+<p>其实，这个是已经可以查看部署好的站点了。通过链接直接查看。<br><img class="aligncenter" src="http://res.cloudinary.com/terry/image/upload/v1513737649/heroku-wordpress/J_KWWUAE9X_Z_DNFJ_BL.png" alt="" width="850" height="500"></p>
+<p><strong>愉快的享用吧。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://shadow-worker.herokuapp.com/2017/12/21/Heroku-WordPress/" data-id="cjbhn728700015wve6qtu1jos" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/21/Ubuntu-VPS-ShadowSocks/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Ubuntu+VPS+ShadowSocks
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/21/测试文章/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">no-ip的使用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/12/22/monitor-new-blog/">hexo创建新博客后自动打开</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/C-文件读写-fstream/">C++文件读写(fstream)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/Ubuntu-VPS-ShadowSocks/">Ubuntu+VPS+ShadowSocks</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/Heroku-WordPress/">Heroku+WordPress</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/测试文章/">no-ip的使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Terry Chow<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

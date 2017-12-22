@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>C++文件读写(fstream) | SWorker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="C++对文件的处理是采用的文件流的方式，其本质是利用一个buffer中间层。 在刚开始接触C++需要将内容输出到控制台或者从控制台输入内容时，分别采用的是“cout&amp;lt;&amp;lt;内容;”和“cin&amp;gt;&amp;gt;内容;”。想要用cin和cout要先包含&amp;lt; iostream &amp;gt;头文件以及std这个命名空间。 文件的操作需要的头文件是fstream，其中读文件是ifstream，写文件是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++文件读写(fstream)">
+<meta property="og:url" content="http://shadow-worker.herokuapp.com/2017/12/21/C-文件读写-fstream/index.html">
+<meta property="og:site_name" content="SWorker">
+<meta property="og:description" content="C++对文件的处理是采用的文件流的方式，其本质是利用一个buffer中间层。 在刚开始接触C++需要将内容输出到控制台或者从控制台输入内容时，分别采用的是“cout&amp;lt;&amp;lt;内容;”和“cin&amp;gt;&amp;gt;内容;”。想要用cin和cout要先包含&amp;lt; iostream &amp;gt;头文件以及std这个命名空间。 文件的操作需要的头文件是fstream，其中读文件是ifstream，写文件是">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-21T08:52:29.104Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++文件读写(fstream)">
+<meta name="twitter:description" content="C++对文件的处理是采用的文件流的方式，其本质是利用一个buffer中间层。 在刚开始接触C++需要将内容输出到控制台或者从控制台输入内容时，分别采用的是“cout&amp;lt;&amp;lt;内容;”和“cin&amp;gt;&amp;gt;内容;”。想要用cin和cout要先包含&amp;lt; iostream &amp;gt;头文件以及std这个命名空间。 文件的操作需要的头文件是fstream，其中读文件是ifstream，写文件是">
+  
+    <link rel="alternate" href="/atom.xml" title="SWorker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">SWorker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Welcome to my blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://shadow-worker.herokuapp.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-C-文件读写-fstream" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/21/C-文件读写-fstream/" class="article-date">
+  <time datetime="2017-12-21T08:32:17.000Z" itemprop="datePublished">2017-12-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C++文件读写(fstream)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>C++对文件的处理是采用的文件流的方式，其本质是利用一个buffer中间层。</p>
+<p>在刚开始接触C++需要将内容输出到控制台或者从控制台输入内容时，分别采用的是“cout&lt;&lt;内容;”和“cin&gt;&gt;内容;”。想要用cin和cout要先包含&lt; iostream &gt;头文件以及std这个命名空间。</p>
+<p>文件的操作需要的头文件是fstream，其中读文件是ifstream，写文件是ofstream。<br><a id="more"></a></p>
+<p>一个简单的读文件操作：</p>
+<p>using namespace std;<br>int main()<br>{<br>ifstream file;<br>string readdata;<br>file.open(“test.txt”);    //假设当前文件夹下有这个文件。<br>getline(file, readdata);  //getline()是逐行读取，遇到换行符终止。其中第一个参数file是被读取文件，readdata是读入的位置（string类型）。<br>cout &lt;&lt; readdata &lt;&lt; endl;     //件输出到控制台，检验结果。<br>return 0;<br>}</p>
+<p><span style="font-size: 1.1em;">一个简单写文件操作(在当前文件夹下创建一个test.txt文件，并往里面写入一句话)：</span></p>
+<p>using namespace std;<br>int main()<br>{<br>string writeData = “This is a test.”;<br>ofstream file;<br>file.open(“test.txt”);<br>file &gt;&gt; writeData &gt;&gt; “\n”;<br>return 0;<br>}</p>
+<p>上面两个例子展示了最简单的文件的读写。其中读文件用了”getline()”这个函数，这个函数是以换行符结尾的读写方式。我们也可以采用跟cin相似的方法进行都文件操作。只不过这个方式的操作每次只会读取一个词（以空格划分），因此需要用循环的方式读取，以文件结尾为结束标志：</p>
+<p>while( !file.eof() )<br>{<br>s = s + readData + “ “;<br>file&gt;&gt;readData;<br>}<br>其中s是最终读取的整个文章的内容（没有回车，可以再加判断以文章原格式读入），readData是每次读取的内容。</p>
+<p>以上对文件读操作是建立在文件存在的情况下，而写操作也只能完全覆盖。在实际使用的时候我们可能要判断文件是否存在，如果文件存在那么是进行覆盖还是追加写入，如果文件不存在是要创建新文件还是直接退出等等操作。这些完全可以在通过修改open函数的参数来定义文件的打开模式：<br>ios::in                   读<br>ios::out                写<br>ios::app               从文件末尾开始写<br>ios::binary           二进制模式<br>ios::nocreate      打开一个文件时，如果文件不存在，不创建文件。<br>ios::noreplace    打开一个文件时，如果文件不存在，创建该文件<br>ios::trunc             打开一个文件，然后清空内容<br>ios::ate                打开一个文件时，将位置移动到文件尾<br>从这个属性列表中可以看出有in和out，所以可以直接用fstream进行对象的创建，然后再open的时候传入想要操作的参数，接下来的操作就完全一样了。</p>
+<ul><br>     <li>默认打开的文本文件</li><br>     <li>默认文本不存在就创建一个新的</li><br>     <li>可以多种模式混合使用，中间用|（按位或）</li><br>     <li>文件的索引是从0开始的</li><br></ul>
+
+<p>文件指针位置 ：<br>ios :: beg    文件头<br>ios :: end    文件尾<br>ios :: cur    当前位置</p>
+<p>常用错误判断方法：<br>good()    文件成功打开<br>bad()      打开文件时出现错误<br>eof()       到达文件尾</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://shadow-worker.herokuapp.com/2017/12/21/C-文件读写-fstream/" data-id="cjbhn727e00005wve8glpuu06" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/22/monitor-new-blog/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          hexo创建新博客后自动打开
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/21/Ubuntu-VPS-ShadowSocks/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Ubuntu+VPS+ShadowSocks</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/12/22/monitor-new-blog/">hexo创建新博客后自动打开</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/C-文件读写-fstream/">C++文件读写(fstream)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/Ubuntu-VPS-ShadowSocks/">Ubuntu+VPS+ShadowSocks</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/Heroku-WordPress/">Heroku+WordPress</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/测试文章/">no-ip的使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Terry Chow<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
